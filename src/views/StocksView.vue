@@ -1,7 +1,11 @@
 <template>
   <v-container>
     <v-row>
-      <HelloWorld />
+      <StockCard
+        v-for="symbol in symbols"
+        :key="symbol.index"
+        :symbol="symbol"
+      />
     </v-row>
   </v-container>
 </template>
@@ -10,18 +14,16 @@
 import { defineComponent } from "vue";
 
 // Components
-import HelloWorld from "../components/HelloWorld.vue";
-import StockService from "@/services/StockService";
+import StockCard from "../components/StockCard.vue";
 
 export default defineComponent({
   name: "StocksView",
   components: {
-    HelloWorld,
+    StockCard,
   },
   data() {
     return {
-      symbol: ["IBM"],
-      stock: null,
+      symbols: ["IBM"],
     };
   },
 });

@@ -1,7 +1,9 @@
+/* eslint-disable */
+// eslint-disable-next-line
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED",
+  baseURL: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&",
   withCredentials: false,
   headers: {
     Accept: "application/json",
