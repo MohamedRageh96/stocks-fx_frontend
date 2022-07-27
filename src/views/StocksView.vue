@@ -1,7 +1,9 @@
 <template>
   <v-container>
+    <v-row class="justify-end mb-6">
+      <NewStock @add-to-symbols="updateSymbols" />
+    </v-row>
     <v-row>
-      <NewStockBtn />
       <StockCard
         v-for="symbol in symbols"
         :key="symbol.index"
@@ -16,18 +18,23 @@ import { defineComponent } from "vue";
 
 // Components
 import StockCard from "../components/StockCard.vue";
-import NewStockBtn from "../components/NewStockBtn.vue";
+import NewStock from "../components/NewStock.vue";
 
 export default defineComponent({
   name: "StocksView",
   components: {
     StockCard,
-    NewStockBtn,
+    NewStock,
   },
   data() {
     return {
       symbols: ["IBM"],
     };
+  },
+  methods: {
+    updateSymbols(symbol) {
+      this.symbols.push(symbol);
+    },
   },
 });
 </script>
