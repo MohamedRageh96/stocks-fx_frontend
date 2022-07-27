@@ -39,7 +39,6 @@ export default {
     StockService.getForex(this.forex[0], this.forex[1])
       .then((response) => {
         this.fx = response.data;
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
