@@ -7,10 +7,7 @@
     </v-app-bar>
     <v-main>
       <v-container fluid>
-        <router-view
-          @add-to-symbols="updateSymbols"
-          :symbols="symbols"
-        ></router-view>
+        <router-view></router-view>
       </v-container>
     </v-main>
   </v-app>
@@ -19,16 +16,5 @@
 <script>
 export default {
   name: "App",
-
-  data() {
-    return {
-      symbols: ["IBM"],
-    };
-  },
-  methods: {
-    updateSymbols(symbol) {
-      this.symbols.push(symbol);
-    },
-  },
 };
 </script>

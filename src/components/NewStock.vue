@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import store from "@/store";
+
 export default {
   emits: {
     "add-to-symbols": String,
@@ -30,7 +32,7 @@ export default {
   }),
   methods: {
     addSymbol() {
-      this.$emit("add-to-symbols", this.symbol);
+      store.commit("setSymbols", this.symbol);
     },
   },
   computed: {

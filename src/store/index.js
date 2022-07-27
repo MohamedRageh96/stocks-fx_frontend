@@ -1,9 +1,15 @@
 import { createStore } from "vuex";
 
 export default createStore({
-  state: {},
+  state: {
+    symbols: ["IBM"],
+  },
   getters: {},
-  mutations: {},
+  mutations: {
+    setSymbols(state, symbol) {
+      state.symbols.push(symbol);
+    },
+  },
   actions: {},
   modules: {},
 });

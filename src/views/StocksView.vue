@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="justify-end mb-6">
-      <NewStock @add-to-symbols="updateSymbols" />
+      <NewStock />
     </v-row>
     <v-row>
       <StockCard
@@ -19,6 +19,7 @@ import { defineComponent } from "vue";
 // Components
 import StockCard from "../components/StockCard.vue";
 import NewStock from "../components/NewStock.vue";
+import store from "@/store/index";
 
 export default defineComponent({
   name: "StocksView",
@@ -26,15 +27,9 @@ export default defineComponent({
     StockCard,
     NewStock,
   },
-  props: {
-    symbols: {
-      type: Array,
-      required: true,
-    },
-  },
-  methods: {
-    updateSymbols(symbol) {
-      this.$emit("add-to-symbols", symbol);
+  computed: {
+    symbols() {
+      return store.state.symbols;
     },
   },
 });
