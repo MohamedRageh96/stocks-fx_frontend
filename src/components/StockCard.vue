@@ -1,9 +1,20 @@
 <template>
   <v-col v-if="stock" sm="1" md="3">
     <v-card class="d-flex flex-row justify-space-between">
-      <div class="d-flex flex-column align-center flex-grow-1">
-        <v-card-text>{{ stock["4. close"] }}</v-card-text>
-        <v-card-text>{{ symbol }}</v-card-text>
+      <div
+        class="d-flex flex-column justify-space-around align-center flex-grow-1"
+      >
+        <div class="d-flex justify-center">
+          <h4 v-if="stock['4. close'] >= stock['1. open']" class="text-green">
+            {{ stock["4. close"] }}
+          </h4>
+          <h4 v-else-if="stock['4. close'] < stock['1. open']" class="text-red">
+            {{ stock["4. close"] }}
+          </h4>
+        </div>
+        <div class="d-flex justify-center">
+          <v-card-text>{{ symbol }}</v-card-text>
+        </div>
       </div>
       <div class="d-flex flex-column align-center flex-grow-1">
         <v-card-text>Open: {{ stock["1. open"] }}</v-card-text>

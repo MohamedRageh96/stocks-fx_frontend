@@ -6,7 +6,7 @@
         <v-btn to="/" depressed rounded>Stocks</v-btn>
         <v-btn to="/fx" depressed rounded>Fx</v-btn>
       </v-app-bar>
-      <router-view />
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
