@@ -26,14 +26,15 @@ export default defineComponent({
     StockCard,
     NewStock,
   },
-  data() {
-    return {
-      symbols: ["IBM"],
-    };
+  props: {
+    symbols: {
+      type: Array,
+      required: true,
+    },
   },
   methods: {
     updateSymbols(symbol) {
-      this.symbols.push(symbol);
+      this.$emit("add-to-symbols", symbol);
     },
   },
 });
