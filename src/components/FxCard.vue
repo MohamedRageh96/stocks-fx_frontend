@@ -20,7 +20,7 @@
 <script>
 //components
 
-import StockService from "@/services/StockService";
+import AppService from "@/services/AppService";
 
 export default {
   name: "FxCard",
@@ -36,7 +36,7 @@ export default {
     };
   },
   created() {
-    StockService.getForex(this.forex[0], this.forex[1])
+    AppService.getForex(this.forex[0], this.forex[1])
       .then((response) => {
         this.fx = response.data;
       })

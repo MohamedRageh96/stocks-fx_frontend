@@ -12,9 +12,9 @@ const apiClient = axios.create({
 });
 export default {
   getStock(symbol) {
-    return apiClient.get(`query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=MV7K60M0XWHH1IUV`)
+    return apiClient.get(`query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=MV7K60M0XWHH1IUV`);
   },
   getForex(fromCur, toCur) {
-    return apiClient.get(`query?function=CURRENCY_EXCHANGE_RATE&from_currency=${fromCur}&to_currency=${toCur}&apikey=MV7K60M0XWHH1IUV`)
+    return apiClient.get(`query?function=CURRENCY_EXCHANGE_RATE&from_currency=${fromCur}&to_currency=${toCur}&apikey=MV7K60M0XWHH1IUV`);
   },
 };

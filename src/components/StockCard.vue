@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import StockService from "@/services/StockService";
+import AppService from "@/services/AppService";
 
 export default {
   name: "StockCard",
@@ -44,7 +44,7 @@ export default {
     };
   },
   created() {
-    StockService.getStock(this.symbol)
+    AppService.getStock(this.symbol)
       .then((response) => {
         this.stock =
           response.data["Time Series (Daily)"][
