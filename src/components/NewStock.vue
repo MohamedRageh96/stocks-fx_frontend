@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="4">
+  <v-col sm="8">
     <v-text-field
       v-model="symbol"
       :rules="symbolRules"
@@ -8,7 +8,7 @@
     >
     </v-text-field>
   </v-col>
-  <v-col cols="2">
+  <v-col sm="4">
     <v-btn
       :class="{ disabledButton: !isSymbol }"
       :disabled="!isSymbol"
@@ -22,9 +22,6 @@
 import store from "@/store";
 
 export default {
-  emits: {
-    "add-to-symbols": String,
-  },
   name: "NewStock",
   data: () => ({
     symbol: "",

@@ -1,5 +1,5 @@
 <template>
-  <v-col v-if="stock" sm="1" md="3">
+  <v-col v-if="stock" sm="12" md="3">
     <v-card class="d-flex flex-row justify-space-between">
       <div
         class="d-flex flex-column justify-space-around align-center flex-grow-1"
@@ -50,11 +50,6 @@ export default {
           response.data["Time Series (Daily)"][
             response.data["Meta Data"]["3. Last Refreshed"]
           ];
-        console.log(
-          response.data["Time Series (Daily)"][
-            response.data["Meta Data"]["3. Last Refreshed"]
-          ]
-        );
       })
       .catch((error) => {
         console.log(error);
