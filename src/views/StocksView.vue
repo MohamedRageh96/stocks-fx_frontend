@@ -25,7 +25,6 @@ import { defineComponent } from "vue";
 // Components
 import StockCard from "../components/StockCard.vue";
 import NewStock from "../components/NewStock.vue";
-import store from "@/store/index";
 
 export default defineComponent({
   name: "StocksView",
@@ -35,7 +34,7 @@ export default defineComponent({
   },
   computed: {
     symbols() {
-      return store.state.symbols;
+      return this.$store.state.symbols;
     },
   },
 });

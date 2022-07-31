@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import store from "@/store";
-
 export default {
   name: "NewForex",
   data: () => ({
@@ -40,7 +38,7 @@ export default {
   }),
   methods: {
     addForex() {
-      store.commit("setForex", [this.fromCur, this.toCur]);
+      this.$store.commit("setForex", [this.fromCur, this.toCur]);
     },
   },
   computed: {

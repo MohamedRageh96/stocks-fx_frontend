@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import store from "@/store";
-
 export default {
   name: "NewStock",
   data: () => ({
@@ -29,7 +27,7 @@ export default {
   }),
   methods: {
     addSymbol() {
-      store.commit("setSymbols", this.symbol);
+      this.$store.commit("setSymbols", this.symbol);
     },
   },
   computed: {

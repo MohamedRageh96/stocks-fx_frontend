@@ -22,7 +22,6 @@ import { defineComponent } from "vue";
 // Components
 import FxCard from "@/components/FxCard.vue";
 import NewForex from "@/components/NewForex.vue";
-import store from "@/store/index";
 
 export default defineComponent({
   name: "FxView",
@@ -32,7 +31,7 @@ export default defineComponent({
   },
   computed: {
     forexs() {
-      return store.state.forexs;
+      return this.$store.state.forexs;
     },
   },
 });
